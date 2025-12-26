@@ -1,0 +1,36 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+data/raw/
+data/processed/
+
+# Outputs
+outputs/models/
+outputs/logs/
+outputs/tensorboard/
+# outputs/submissions/*.csv
+
+# PyTorch
+*.pt
+*.pth
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Kaggle
+kaggle.json
