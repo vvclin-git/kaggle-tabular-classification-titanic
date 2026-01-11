@@ -1,21 +1,19 @@
-# Kaggle ML Project – <PROJECT_NAME>
+# Kaggle ML Project – Titanic Survival Prediction
 
 ## 1. Problem Statement
-This project is based on a Kaggle dataset and aims to solve a supervised machine learning problem.
-The objective is to build a reproducible ML pipeline that can generate valid Kaggle submissions,
-with a focus on model reasoning, evaluation, and error analysis rather than leaderboard ranking.
+Predict passenger survival state using given attributes.
 
-- Task type: Classification / Regression / Time-series / NLP
-- Evaluation metric (Kaggle): <metric_name>
+- Task type: Classification (Survived 0/1)
+- Evaluation metric (Kaggle): Prediction Accuracy
 
 ---
 
 ## 2. Dataset
-- Source: Kaggle
-- Input: <brief description of features>
-- Target: <target variable>
+- Source: Kaggle Titanic
+- Input: Passenger attributes from train.csv (e.g., `Pclass`, `Name`, `Sex`, `Age`, `SibSp`, `Parch`, `Ticket`, `Fare`, `Cabin`, `Embarked`)
+- Target: Survived
 - Dataset split strategy:
-  - Training / validation split based on <random / time-based / stratified>
+  - Training / validation split based on stratified K-fold
 
 ---
 
@@ -35,16 +33,15 @@ notebooks/00_eda.ipynb
 ### 4.1 Baseline
 A simple baseline model was implemented to establish a performance reference.
 
-- Model: <e.g., Logistic Regression / Simple CNN / MLP>
+- Model: Logistic Regression
 - Purpose: Sanity check and lower-bound performance
 
 ### 4.2 Improved Model
-The improved model was built using PyTorch with the following enhancements:
+The improved model was built using PyTorch with the following enhancements. A decision tree based model (XGBoost) was also included for comparison:
 
 - Feature engineering / preprocessing
-- Model architecture refinement
-- Regularization techniques
-- Training strategy improvements
+- Hyperparameter optimization
+- Comparison with XGBoost model
 
 ---
 
@@ -61,12 +58,15 @@ Evaluation is performed using scikit-learn metrics after PyTorch inference.
 ---
 
 ## 6. Results
-| Model     | Metric | Kaggle Score | Notes |
-|-----------|--------|--------------|-------|
-| Baseline  |        |              |       |
-| Improved  |        |              |       |
 
-Leaderboard snapshot date: <YYYY-MM-DD>
+| Model | Metric | Kaggle Score | Notes |
+|-------|--------|--------------|-------|
+| All female guess | accuracy | 0.76555 | gender_submission.csv |
+| Baseline | accuracy | 0.76315 | Logistic Classifier |
+| Improved I | accuracy | 0.77033 | Baseline + FE |
+| Final | accuracy | 0.78947 | XGBoost + FE |
+
+Leaderboard snapshot date: <2026-01-11>
 
 ---
 
