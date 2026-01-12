@@ -73,17 +73,17 @@ Leaderboard snapshot date: <2026-01-11>
 ## 7. How to Run
 
 ### 7.1 Environment setup
-pip install -r requirements.txt
-
-or
-
 pip install -e .
 
 ### 7.2 Training
-python src/train.py
+Train a specific model (use `--use-hpo` to load `outputs/params/best_params.json` if present):
+
+python -m src.train --model baseline --use-hpo
+python -m src.train --model improved --use-hpo
+python -m src.train --model xgb --use-hpo
 
 ### 7.3 Generate submission
-python src/predict.py
+python -m src.predict --model-path outputs/models/baseline_logistic_YYYYMMDD-HH-MM-SS.joblib
 
 The generated file will be saved under:
 outputs/submissions/
@@ -93,13 +93,23 @@ outputs/submissions/
 ## 8. Project Structure
 ```text
 .
-├── data/
-│   ├── raw/
-│   └── processed/
-├── notebooks/
-├── src/
-├── outputs/
-└── README.md
+|-- data/
+|   |-- raw/
+|   `-- processed/
+|-- notebooks/
+|-- outputs/
+|   |-- models/
+|   |-- params/
+|   `-- submissions/
+|-- src/
+|   |-- __init__.py
+|   |-- config.py
+|   |-- features.py
+|   |-- preprocess.py
+|   |-- train.py
+|   |-- predict.py
+|   `-- train_utils.py
+`-- README.md
 ```
 ---
 
