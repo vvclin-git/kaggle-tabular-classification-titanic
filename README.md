@@ -49,7 +49,7 @@ The improved model was built using PyTorch with the following enhancements. A de
 Evaluation is performed using scikit-learn metrics after PyTorch inference.
 
 - Metrics used:
-  - <accuracy / F1 / RMSE / MAE / etc.>
+  - accuracy / AUC score
 - Error analysis:
   - Class-wise performance
   - Common failure cases
@@ -91,6 +91,7 @@ outputs/submissions/
 ---
 
 ## 8. Project Structure
+```text
 .
 ├── data/
 │   ├── raw/
@@ -99,7 +100,7 @@ outputs/submissions/
 ├── src/
 ├── outputs/
 └── README.md
-
+```
 ---
 
 ## 9. Limitations & Future Work
