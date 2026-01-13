@@ -51,8 +51,7 @@ Evaluation is performed using scikit-learn metrics after PyTorch inference.
 - Metrics used:
   - accuracy / AUC score
 - Error analysis:
-  - Class-wise performance
-  - Common failure cases
+  - Class-wise performance  
   - Possible data or model limitations
 
 ---
